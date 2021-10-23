@@ -2,18 +2,25 @@ pipeline {
     agent none 
     stages {
         stage('Example Build') {
-            agent { docker 'maven:3.8.1-adoptopenjdk-11' } 
+            agent { docker 'nginx' } 
             steps {
-                echo 'Hello, Maven'
-                sh 'mvn --version'
+                echo 'Hello, nginx'
+                sh 'nginx --version'
             }
         }
         stage('Example Test') {
-            agent { docker 'openjdk:8-jre' } 
+            agent { docker 'ubuntu' } 
             steps {
-                echo 'Hello, JDK'
-                sh 'java -version'
+                echo 'Hello, ubi'
+                sh 'ubuntu -version'
             }
         }
-    }
+         stage('Example Test') {
+            agent { docker 'centos:6' } 
+            steps {
+                echo 'Hello, centos'
+                sh 'centos -version'
+         }
+     }
+  }
 }
