@@ -15,7 +15,7 @@ pipeline {
                 sh 'ubuntu -version'
             }
         }
-         stage('Example Test') {
+         stage('Deploy') {
             agent { docker 'centos:6' } 
             steps {
                 echo 'Hello, centos'
