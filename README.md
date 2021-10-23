@@ -2,24 +2,24 @@ pipeline {
     agent none 
     stages {
         stage('Example Build') {
-            agent { docker 'nginx' } 
+            agent { docker 'centos:8' } 
             steps {
-                echo 'Hello, nginx'
-                sh 'nginx --version'
+                echo 'Hello, centos'
+                sh 'pwd'
             }
         }
         stage('Example Test') {
             agent { docker 'ubuntu' } 
             steps {
                 echo 'Hello, ubi'
-                sh 'ubuntu -version'
+                sh 'time'
             }
         }
          stage('Deploy') {
             agent { docker 'centos:6' } 
             steps {
                 echo 'Hello, centos'
-                sh 'centos -version'
+                sh 'ls'
          }
      }
   }
