@@ -9,14 +9,14 @@ pipeline {
             }
         }
         stage('Example Test') {
-            agent { docker 'centos:8' } 
+            agent { docker 'ubuntu' } 
             steps {
                 echo 'Hello, ubi'
                 sh 'time'
             }
         }
          stage('Deploy') {
-            agent { docker 'centos:8' } 
+            agent { docker 'centos:6' } 
             steps {
                 echo 'Hello, centos'
                 sh 'ls'
