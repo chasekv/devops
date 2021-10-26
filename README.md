@@ -8,7 +8,7 @@ pipeline {
             }
         }
         stage('Example Test') {
-            agent { docker 'ubuntu' } 
+            agent { docker 'centos:7' } 
             steps {
                 echo 'Hello, ubi'
             }
